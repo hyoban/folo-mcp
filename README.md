@@ -13,6 +13,8 @@ Set `FOLO_SESSION_TOKEN` environment variable to your Folo session token.
 npx folo-mcp -y
 ```
 
+Configuration for [ChatWise](https://chatwise.app)
+
 ![CleanShot 2025-03-29 at 23 05 22@2x](https://github.com/user-attachments/assets/91b1841c-e556-4669-b68f-8afd51ce358c)
 
 ## Sponsors
