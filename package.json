@@ -16,7 +16,10 @@
     "url": "git+https://github.com/hyoban/folo-mcp.git"
   },
   "bugs": "https://github.com/hyoban/folo-mcp/issues",
-  "keywords": ["mcp", "Folo"],
+  "keywords": [
+    "mcp",
+    "Folo"
+  ],
   "sideEffects": false,
   "bin": "./dist/bin.js",
   "files": [
@@ -35,6 +38,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.8.0",
+    "ufo": "^1.5.4",
     "zod": "^3.24.2"
   },
   "devDependencies": {
