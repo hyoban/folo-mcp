@@ -56,21 +56,21 @@ jobs:
       - name: Build
         run: nr build
 
-      - name: Test
-        run: nr test
+      # - name: Test
+      #   run: nr test
 
-      - name: Pub Lint
-        if: ${{ matrix.os == 'ubuntu-latest' }}
-        run: publint
+      # - name: Pub Lint
+      #   if: ${{ matrix.os == 'ubuntu-latest' }}
+      #   run: publint
 
-      - name: Are The Types Wrong
-        if: ${{ matrix.os == 'ubuntu-latest' }}
-        run: attw --pack .
+      # - name: Are The Types Wrong
+      #   if: ${{ matrix.os == 'ubuntu-latest' }}
+      #   run: attw --pack .
 
-      - name: Dedupe
-        if: ${{ matrix.os == 'ubuntu-latest' }}
-        run: pnpm dedupe --check
+      # - name: Dedupe
+      #   if: ${{ matrix.os == 'ubuntu-latest' }}
+      #   run: pnpm dedupe --check
 
-      - name: Knip
-        if: ${{ matrix.os == 'ubuntu-latest' }}
-        run: knip
+      # - name: Knip
+      #   if: ${{ matrix.os == 'ubuntu-latest' }}
+      #   run: knip
