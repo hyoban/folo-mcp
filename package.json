@@ -16,7 +16,7 @@
     "url": "git+https://github.com/hyoban/folo-mcp.git"
   },
   "bugs": "https://github.com/hyoban/folo-mcp/issues",
-  "keywords": [],
+  "keywords": ["mcp", "Folo"],
   "sideEffects": false,
   "bin": "./dist/bin.js",
   "files": [

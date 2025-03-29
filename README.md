@@ -3,7 +3,17 @@
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 
-description
+MCP server for [Folo](https://github.com/RSSNext/Folo)
+
+## Usage
+
+Set `SESSION_TOKEN` environment variable to your Folo session token.
+
+```bash
+npx folo-mcp -y
+```
+
+![CleanShot 2025-03-29 at 21 25 57@2x](https://github.com/user-attachments/assets/5146cf79-0899-4f72-a5c5-5561cb2d3ea0)
 
 ## Sponsors
 
