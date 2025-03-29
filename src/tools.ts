@@ -2,6 +2,10 @@ import { z } from 'zod'
 
 const zodView = z.number().optional().describe('Filter by view type, 0 for Articles, 1 for Social Media, 2 for Pictures, 3 for Videos, 4 for Audios, 5 for Notifications')
 const zodUserId = z.string().optional().describe('Filter by user ID, if not provided, the current user will be used')
+const zodFeedId = z.string().optional().describe('Filter by feed ID')
+const zodListId = z.string().optional().describe('Filter by list ID')
+const zodFeedIdList = z.array(z.string()).optional().describe('Filter by list of feed IDs')
+const zodInboxId = z.string().optional().describe('Filter by inbox ID')
 
 export const tools = {
   entry_list: {
@@ -13,9 +17,9 @@ export const tools = {
     },
     input: {
       view: zodView,
-      feedId: z.string().optional().describe('Filter by feed ID'),
-      listId: z.string().optional().describe('Filter by list ID'),
-      feedIdList: z.array(z.string()).optional().describe('Filter by list of feed IDs'),
+      feedId: zodFeedId,
+      listId: zodListId,
+      feedIdList: zodFeedIdList,
       read: z.boolean().optional().describe('Filter by read status'),
       limit: z.number().optional().describe('Limit the number of entries returned'),
       publishedAfter: z.string().datetime().optional().describe('Filter by published date after this date'),
@@ -57,6 +61,23 @@ export const tools = {
     input: {
       id: z.string().optional().describe('Feed ID'),
       url: z.string().url().optional().describe('Feed URL'),
+    },
+  },
+  mark_read: {
+    name: 'mark_read',
+    description: 'Mark entries as read by view, feed ID, or list ID, or inbox ID',
+    query: {
+      path: '/reads/all',
+      method: 'POST',
+    },
+    input: {
+      view: zodView,
+      feedId: zodFeedId,
+      listId: zodListId,
+      inboxId: zodInboxId,
+      feedIdList: zodFeedIdList,
+      startTime: z.number().optional(),
+      endTime: z.number().optional(),
     },
   },
 }

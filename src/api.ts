@@ -39,7 +39,7 @@ export async function sendApiQuery({
     },
   )
   const json = (await res.json()) as any
-  if (json.code !== 0) {
+  if (json?.code !== 0) {
     throw new Error(`Error: ${json.message}`)
   }
 
@@ -47,7 +47,7 @@ export async function sendApiQuery({
     content: [
       {
         type: 'text',
-        text: JSON.stringify(json.data),
+        text: json?.data ? JSON.stringify(json.data, null, 2) : 'Success',
       },
     ],
   }
