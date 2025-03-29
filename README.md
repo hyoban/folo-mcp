@@ -7,7 +7,7 @@ MCP server for [Folo](https://github.com/RSSNext/Folo)
 
 ## Usage
 
-Set `SESSION_TOKEN` environment variable to your Folo session token.
+Set `FOLO_SESSION_TOKEN` environment variable to your Folo session token.
 
 ```bash
 npx folo-mcp -y

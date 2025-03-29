@@ -10,13 +10,13 @@ export async function sendApiQuery({
   path: string
   method: string
 }): Promise<CallToolResult> {
-  const sessionToken = process.env.SESSION_TOKEN
+  const sessionToken = process.env.FOLO_SESSION_TOKEN
   if (!sessionToken) {
     return {
       content: [
         {
           type: 'text',
-          text: 'Without session token, I cannot access the data. Please provide it in the environment variable SESSION_TOKEN.',
+          text: 'Without session token, I cannot access the data. Please provide it in the environment variable FOLO_SESSION_TOKEN.',
         },
       ],
     }
