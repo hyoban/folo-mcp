@@ -1,0 +1,65 @@
+{
+  "name": "folo-mcp",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.7.0",
+  "description": "MCP server for Folo",
+  "author": {
+    "name": "Stephen Zhou",
+    "url": "https://hyoban.cc",
+    "email": "hi@hyoban.cc"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/hyoban/folo-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyoban/folo-mcp.git"
+  },
+  "bugs": "https://github.com/hyoban/folo-mcp/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bunchee",
+    "dev": "bunchee --watch",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "prepare": "simple-git-hooks",
+    "prepublishOnly": "pnpm run build",
+    "test": "vitest",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "bunchee": "^6.5.0",
+    "eslint": "^9.23.0",
+    "eslint-config-hyoban": "4.0.2",
+    "lint-staged": "^15.5.0",
+    "simple-git-hooks": "^2.12.1",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
