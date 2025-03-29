@@ -13,7 +13,7 @@ Set `FOLO_SESSION_TOKEN` environment variable to your Folo session token.
 npx folo-mcp -y
 ```
 
-![CleanShot 2025-03-29 at 21 25 57@2x](https://github.com/user-attachments/assets/5146cf79-0899-4f72-a5c5-5561cb2d3ea0)
+![CleanShot 2025-03-29 at 23 05 22@2x](https://github.com/user-attachments/assets/91b1841c-e556-4669-b68f-8afd51ce358c)
 
 ## Sponsors
 
