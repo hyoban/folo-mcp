@@ -28,19 +28,26 @@ export async function sendApiQuery({
       method,
       headers: {
         'cookie': `__Secure-better-auth.session_token=${sessionToken};`,
-        'content-type': 'application/json',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36',
+        ...(method === 'POST'
+          ? {
+              'content-type': 'application/json',
+            }
+          : {}),
       },
       body: method === 'GET' ? undefined : JSON.stringify(args),
     },
   )
-  const text = await res.text()
+  const json = (await res.json()) as any
+  if (json.code !== 0) {
+    throw new Error(`Error: ${json.message}`)
+  }
 
   return {
     content: [
       {
         type: 'text',
-        text,
+        text: JSON.stringify(json.data),
       },
     ],
   }

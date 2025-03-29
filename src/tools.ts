@@ -7,6 +7,10 @@ export const tools = {
   entry_list: {
     name: 'entry_list',
     description: 'Get a list of entries from Folo',
+    query: {
+      path: '/entries',
+      method: 'POST',
+    },
     input: {
       view: zodView,
       feedId: z.string().optional().describe('Filter by feed ID'),
@@ -19,10 +23,6 @@ export const tools = {
       isCollection: z.boolean().optional().describe('Filter by collection status, set true for Starred'),
       withContent: z.boolean().optional().describe('Include content in the response'),
     },
-    query: {
-      path: '/entries',
-      method: 'POST',
-    },
   },
   subscription_list: {
     name: 'subscription_list',
@@ -34,6 +34,29 @@ export const tools = {
     input: {
       view: zodView,
       userId: zodUserId,
+    },
+  },
+  unread_count: {
+    name: 'unread_count',
+    description: 'Get the unread count from Folo grouped by feed',
+    query: {
+      path: '/reads',
+      method: 'GET',
+    },
+    input: {
+      view: zodView,
+    },
+  },
+  feed_info: {
+    name: 'feed_info',
+    description: 'Get information about a specific feed by ID or URL',
+    query: {
+      path: '/feeds',
+      method: 'GET',
+    },
+    input: {
+      id: z.string().optional().describe('Feed ID'),
+      url: z.string().url().optional().describe('Feed URL'),
     },
   },
 }
